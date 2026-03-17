@@ -1,0 +1,20 @@
+{
+  "name": "@joyautomation/tentacle-demo",
+  "version": "0.0.1",
+  "exports": "./main.ts",
+  "tasks": {
+    "dev": "deno run --allow-all --watch main.ts",
+    "codegen": "deno run --env-file=.env --allow-all codegen.ts"
+  },
+  "imports": {
+    "@tentacle/plc": "jsr:@joyautomation/tentacle-plc@^0.0.11",
+    "@tentacle/plc/codegen": "jsr:@joyautomation/tentacle-plc@^0.0.11/codegen",
+    "@joyautomation/coral": "jsr:@joyautomation/coral@^0.0.12",
+    "@joyautomation/dark-matter": "jsr:@joyautomation/dark-matter@^0.0.26",
+    "@joyautomation/nats-schema": "jsr:@joyautomation/tentacle-nats-schema@^0.0.6",
+    "@nats-io/transport-deno": "jsr:@nats-io/transport-deno@3.3",
+    "@nats-io/jetstream": "jsr:@nats-io/jetstream@3.3",
+    "@nats-io/kv": "jsr:@nats-io/kv@3",
+    "@nats-io/nats-core": "jsr:@nats-io/nats-core@3.3"
+  }
+}
