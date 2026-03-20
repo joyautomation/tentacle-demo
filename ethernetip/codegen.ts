@@ -22,7 +22,7 @@ if (runAll || filter === "eip") {
       devices: [
         { id: "rtu45", host: "client4" },
       ],
-      outputDir: "./generated",
+      outputDir: "./ethernetip/generated",
     });
   } catch (err) {
     console.error(
@@ -47,7 +47,7 @@ if (runAll || filter === "opcua") {
           startNodeId: "i=85",
         },
       ],
-      outputDir: "./generated",
+      outputDir: "./ethernetip/generated",
     });
   } catch (err) {
     console.error(

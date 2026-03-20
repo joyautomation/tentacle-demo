@@ -1,14 +1,16 @@
 {
   "name": "@joyautomation/tentacle-demo",
   "version": "0.0.1",
-  "exports": "./main.ts",
+  "exports": "./ethernetip/main.ts",
   "tasks": {
-    "dev": "deno run --allow-all --watch main.ts",
-    "codegen": "deno run --env-file=.env --allow-all codegen.ts"
+    "dev:eip": "deno run --allow-all --watch ethernetip/main.ts",
+    "dev:snmp": "deno run --allow-all --watch snmp/main.ts",
+    "codegen:eip": "deno run --env-file=.env --allow-all ethernetip/codegen.ts",
+    "codegen:snmp": "deno run --env-file=.env --allow-all snmp/codegen.ts"
   },
   "imports": {
-    "@tentacle/plc": "jsr:@joyautomation/tentacle-plc@^0.0.11",
-    "@tentacle/plc/codegen": "jsr:@joyautomation/tentacle-plc@^0.0.11/codegen",
+    "@tentacle/plc": "jsr:@joyautomation/tentacle-plc@^0.0.15",
+    "@tentacle/plc/codegen": "jsr:@joyautomation/tentacle-plc@^0.0.15/codegen",
     "@joyautomation/coral": "jsr:@joyautomation/coral@^0.0.12",
     "@joyautomation/dark-matter": "jsr:@joyautomation/dark-matter@^0.0.26",
     "@joyautomation/nats-schema": "jsr:@joyautomation/tentacle-nats-schema@^0.0.6",
