@@ -13,7 +13,7 @@ import {
   type PlcVariablesRuntime,
 } from "@tentacle/plc";
 
-import { fs_s3900 } from "./generated/snmp.ts";
+import { fs_s3900, udtTemplates } from "./generated/snmp.ts";
 
 const log = createPlcLogger("snmp-demo");
 
@@ -22,8 +22,15 @@ const log = createPlcLogger("snmp-demo");
 // =============================================================================
 
 const variables = {
-  ...snmpAll(fs_s3900, {
-    match: /^sys|^ifDescr|^ifOperStatus|^ifSpeed|^ifInOctets|^ifOutOctets/,
+  ...snmpAll(fs_s3900, udtTemplates, {
+    match: new RegExp([
+      "^sys",            // system info (name, uptime, contact, location)
+      "^ifTable",        // interface table instances
+      "^ifXTable",       // extended interface table instances
+      "^ipForwarding",   // IP forwarding enabled
+      "^tcpCurrEstab",   // active TCP connections
+      "^snmpIn|^snmpOut", // SNMP traffic counters
+    ].join("|")),
   }),
 };
 

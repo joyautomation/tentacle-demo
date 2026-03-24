@@ -9,11 +9,11 @@
     "codegen:snmp": "deno run --env-file=.env --allow-all snmp/codegen.ts"
   },
   "imports": {
-    "@tentacle/plc": "jsr:@joyautomation/tentacle-plc@^0.0.15",
-    "@tentacle/plc/codegen": "jsr:@joyautomation/tentacle-plc@^0.0.15/codegen",
+    "@tentacle/plc": "jsr:@joyautomation/tentacle-plc@^0.0.20",
+    "@tentacle/plc/codegen": "jsr:@joyautomation/tentacle-plc@^0.0.20/codegen",
     "@joyautomation/coral": "jsr:@joyautomation/coral@^0.0.12",
     "@joyautomation/dark-matter": "jsr:@joyautomation/dark-matter@^0.0.26",
-    "@joyautomation/nats-schema": "jsr:@joyautomation/tentacle-nats-schema@^0.0.6",
+    "@joyautomation/nats-schema": "jsr:@joyautomation/tentacle-nats-schema@^0.0.8",
     "@nats-io/transport-deno": "jsr:@nats-io/transport-deno@3.3",
     "@nats-io/jetstream": "jsr:@nats-io/jetstream@3.3",
     "@nats-io/kv": "jsr:@nats-io/kv@3",
